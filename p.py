@@ -1,21 +1,26 @@
 def calculate_perimeter_of_rectangle(width, length):
-    p = (width + length) * 2
-    return p
+    if not (str(width).isnumeric() and str(length).isnumeric()):
+        print("Width and length have to be numbers. Program stopped.")
+        return None
 
-width = input("Enter the width of the rectangle: ")
-length = input("Enter the length of the rectangle: ")
-if(not (width.isnumeric()) or not(length.isnumeric())):
-    print("Width and length have to be number. Program stopped.")
-else:
-    #convert width and length to integer
     width = int(width)
     length = int(length)
 
-    #check if width or length is 0
-    if(width == 0 or length == 0):
+    # Check if width or length is 0
+    if width == 0 or length == 0:
         print("Width and length cannot be 0. Program stopped")
-    elif(width < 0 or length < 0):
-        print("Width and length have to be positive number. Program stopped")
+        return None
+    elif width < 0 or length < 0:
+        print("Width and length have to be positive numbers. Program stopped")
+        return None
     else:
-        p = calculate_perimeter_of_rectangle(width, length)
-        print("Perimeter of the rectangle is " + str(p))
+        p = (width + length) * 2  # Calculate perimeter
+        return p
+
+if _name_ == "_main_":
+    example_width_and_length = (5, 10)  # Example width and length
+    width, length = example_width_and_length
+    perimeter = calculate_perimeter_of_rectangle(width, length)
+
+    if perimeter is not None:  # Check if the result is valid
+        print("Perimeter of the rectangle is " + str(perimeter))
