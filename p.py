@@ -1,5 +1,5 @@
 def calculate_perimeter_of_rectangle(width, length):
-    if not (str(width).isnumeric() and str(length).isnumeric()):
+    if not (str(width).isnumeric() or str(length).isnumeric()):
         print("Width and length have to be numbers. Program stopped.")
         return None
 
