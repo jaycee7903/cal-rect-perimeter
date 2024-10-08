@@ -3,7 +3,7 @@ def calculate_perimeter_of_rectangle(width, length):
     return p
 
 width = input("Enter the width of the rectangle: ")
-length = input("Enter the lenght of the rectangle: ")
+length = input("Enter the length of the rectangle: ")
 if(not (width.isnumeric()) and not(length.isnumeric())):
     print("Width and length have to be number. Program stopped.")
 else:
